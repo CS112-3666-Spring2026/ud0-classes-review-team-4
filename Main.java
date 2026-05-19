@@ -11,7 +11,10 @@ public class Main {
 	/* ALGORITHM
 	*
 	1. Generate 52 card deck into Card array
-	- ???
+	- create card array size 52
+	- fill array with all cards from standard deck
+	-for each suit (heart, diamond, club, spade)
+	-for each value (1-13)
 	2. Print deck (simple)
 	- ???
 	*
@@ -21,9 +24,28 @@ public class Main {
 		//uncomment line below to run CardTester:
 		//CardTester.main(null);
 
+
+
+
 		/*** DRIVER PROGRAM ***/
 		//1. Generate 52 card deck into Card array
-
-		//2. Print deck
+		Card[] deck = new Card[52];
+		char[] suits = {Card.HEART, Card.SPADE, Card.DIAMOND, Card.CLUB};
+	for (int i = 0; i < 4; i++) 
+	{
+		for (int j = 0; j < 13; j++) 
+		{
+			deck[i*13 + j] = new Card(j + 1, suits[i]);
+		}
 	}
-}
+		//2. Print deck
+		for (int i = 0; i < deck.length; i++) 
+			{
+				//if (i % 13 == 0 && i != 0) 
+				
+				//System.out.print(deck[i] + "\t");
+
+				deck[i].printCard();
+			}
+		}
+	}
